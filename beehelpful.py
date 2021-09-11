@@ -33,6 +33,7 @@ def main(args):
 	print("------------------------------------")
 	print("let's get this spelling bee started!")
 	print("------------------------------------")
+	print("")
 
 
 
