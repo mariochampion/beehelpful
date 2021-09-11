@@ -37,7 +37,7 @@ git clone https://github.com/mariochampion/beehelpful.git
 ## Contributing
 
 I am very open to issues and pull requests. Looking for a place to start helping?<br>
-https://github.com/mariochampion/liquibase-drift-reports
+https://github.com/mariochampion/beehelpful
 
 ## Authors
 
