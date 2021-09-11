@@ -1,5 +1,6 @@
 # BeeHelpful
-## A quick python example for teaching eliana some python. But specifically a tool to take N letters, make words, and check if they exist.
+### A quick python example for teaching eliana some python.
+### But specifically a tool to take N letters, make words, and check if they exist.
 
 
 ## Purpose & Goal
