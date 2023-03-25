@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-   
+
 '''
 take a N number of letters and spin up the permutations and check which are words
 
@@ -23,11 +25,14 @@ take a N number of letters and spin up the permutations and check which are word
 import os, sys
 import random
 
+spanish_words = [ 'abogado', 'adiós', 'agencia', 'aireado', 'amantes', 'anuncio', 'arboles', 'ayuda', 'barroco', 'basquet', 'cajones', 'caminos', 'canela', 'canicas', 'chabola', 'cobalto', 'colegio', 'corrida', 'cuidado', 'cultivo', 'delfín', 'dolores', 'dorados', 'embuste', 'enfermo', 'estirpe', 'fábrica', 'farsante', 'futbol', 'gambito', 'gemelos', 'glotóns', 'guitar', 'hámster', 'hermoso', 'hielojo', 'inverno', 'jabalíe', 'jirafas', 'justos', 'kiriele', 'laderas', 'límites', 'lombriz', 'manitas', 'mártir', 'mazapán', 'minutos', 'moldura', 'nocturn',
+]
 
 
-def get_word():
-    words = ['abogado', 'basquet', 'canela', 'dorados', 'enfermo', 'futbol', 'guitar']
-    return random.choice(words)
+def get_word(spanish_words):
+    chosen_word = random.choice(spanish_words)
+    chosen_word = chosen_word.lower()
+    return chosen_word
 
 def validate_letter(letter):
     if not letter.isalpha():
@@ -36,7 +41,7 @@ def validate_letter(letter):
     return True
 
 def play_game():
-    active_word = get_word().lower()
+    active_word = get_word(spanish_words)
     print("active word: " + active_word)
     print(" ")
     guessed_letters = set()
@@ -58,7 +63,7 @@ def play_game():
         guessed_letters.add(letter)
         if letter in active_word:
             positions = [i+1 for i, char in enumerate(active_word) if char == letter]
-            print("La letra '" + letter + "' esta en las palabra " + active_word + ".")
+            print("La letra '" + letter + "' está en las palabra " + active_word + ".")
             if set(active_word) == guessed_letters:
                 print(" ")
                 print("-------!!!------------!!!---------")
@@ -68,7 +73,7 @@ def play_game():
                 return
         else:
             max_guesses -= 1
-            print("Lo siento, la letra '" + letter + "' no esta en la palabra. Te quedan "+ str(max_guesses) + " intentos.")
+            print("Lo siento, la letra '" + letter + "' no está en la palabra. Te quedan "+ str(max_guesses) + " intentos.")
     
     print("Lo siento, no adivinaste la palabra. La palabra era '" + active_word + "'.")
 
